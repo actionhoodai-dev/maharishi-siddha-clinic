@@ -1,96 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Premium Emerald & Gold Palette */
+    --background: 45 29% 96%;
+    --foreground: 157 60% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 45 25% 98%;
+    --card-foreground: 157 60% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 45 25% 98%;
+    --popover-foreground: 157 60% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 157 60% 15%;
+    --primary-foreground: 45 29% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 20% 92%;
+    --secondary-foreground: 157 60% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 15% 90%;
+    --muted-foreground: 157 30% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 54% 54%;
+    --accent-foreground: 157 60% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 42 54% 54%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom Premium Tokens */
+    --emerald-deep: 157 60% 15%;
+    --emerald-medium: 157 50% 25%;
+    --emerald-light: 157 40% 35%;
+    --gold: 42 54% 54%;
+    --gold-light: 42 60% 70%;
+    --gold-glow: 42 70% 60%;
+    --ivory: 45 29% 96%;
+    --ivory-warm: 40 25% 94%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(157 60% 15%) 0%, hsl(157 50% 20%) 50%, hsl(157 40% 25%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 54% 54%) 0%, hsl(42 60% 65%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(45 29% 96%) 0%, hsl(45 25% 94%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(157 60% 15% / 0.1);
+    --shadow-elevated: 0 10px 40px -10px hsl(157 60% 15% / 0.15);
+    --shadow-gold: 0 0 30px hsl(42 54% 54% / 0.3);
+    --shadow-card: 0 2px 30px -5px hsl(157 60% 15% / 0.08);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 157 60% 8%;
+    --foreground: 45 29% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 157 55% 10%;
+    --card-foreground: 45 29% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 157 55% 10%;
+    --popover-foreground: 45 29% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 42 54% 54%;
+    --primary-foreground: 157 60% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 157 50% 15%;
+    --secondary-foreground: 45 29% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 157 40% 18%;
+    --muted-foreground: 45 20% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 42 54% 54%;
+    --accent-foreground: 157 60% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 157 40% 18%;
+    --input: 157 40% 18%;
+    --ring: 42 54% 54%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --emerald-deep: 157 60% 12%;
+    --emerald-medium: 157 50% 20%;
+    --gold: 42 54% 58%;
+    --gold-light: 42 50% 70%;
+    --ivory: 45 15% 90%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(157 60% 8%) 0%, hsl(157 55% 12%) 50%, hsl(157 50% 15%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
   }
 }
 
@@ -99,7 +106,146 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer components {
+  /* Premium Button Styles */
+  .btn-premium {
+    @apply relative overflow-hidden px-8 py-4 font-medium tracking-wide transition-all duration-300;
+    @apply border-2 border-accent rounded-full;
+    @apply hover:shadow-gold-glow hover:scale-[1.02];
+  }
+
+  .btn-premium::before {
+    content: '';
+    @apply absolute inset-0 bg-accent opacity-0 transition-opacity duration-300;
+    @apply hover:opacity-10;
+  }
+
+  .btn-primary-premium {
+    @apply btn-premium bg-primary text-primary-foreground border-primary;
+    @apply hover:bg-emerald-medium;
+  }
+
+  .btn-gold {
+    @apply btn-premium bg-accent text-accent-foreground border-accent;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-dark {
+    @apply bg-primary/80 backdrop-blur-xl border border-primary/50;
+  }
+
+  /* Gold Underline */
+  .gold-underline {
+    @apply relative inline-block;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent scale-x-0 origin-right transition-transform duration-300;
+  }
+
+  .gold-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(2deg); }
+    75% { transform: translateY(-5px) rotate(-1deg); }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-2deg); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(42 54% 54% / 0.4); }
+    50% { box-shadow: 0 0 20px 10px hsl(42 54% 54% / 0); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .container-luxury {
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  /* Decorative Elements */
+  .ornament {
+    @apply w-12 h-0.5 bg-accent rounded-full;
+  }
+
+  .ornament-lg {
+    @apply w-24 h-0.5 bg-accent rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-gold-glow {
+    box-shadow: 0 0 30px hsl(42 54% 54% / 0.3);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
