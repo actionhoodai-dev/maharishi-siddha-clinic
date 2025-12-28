@@ -1,33 +1,30 @@
 import { motion } from 'framer-motion';
-import { Award, GraduationCap, BookOpen, Users, Heart, Star } from 'lucide-react';
+import { ShieldCheck, HeartPulse, Sparkles, Building2, Leaf } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import SectionHeading from '@/components/ui/SectionHeading';
 import FloatingShapes from '@/components/ui/FloatingShapes';
-import doctorImage from '@/assets/doctor-portrait.jpg';
-
-const achievements = [
-  { icon: GraduationCap, label: 'BSMS', description: 'Bachelor of Siddha Medicine & Surgery' },
-  { icon: Award, label: 'Director', description: 'IMPCOPS (Indian Medical Practitioners\' Co-operative)' },
-  { icon: BookOpen, label: '25+ Years', description: 'Clinical Experience in Siddha Medicine' },
-  { icon: Users, label: '10,000+', description: 'Patients Successfully Treated' },
-];
 
 const values = [
   {
-    icon: Heart,
-    title: 'Compassionate Care',
-    description: 'Every patient is treated with genuine care, understanding, and respect for their healing journey.',
+    icon: Leaf,
+    title: 'Authentic Siddha Roots',
+    description: 'We strictly adhere to the classical literature of Siddha Medicine, ensuring every treatment is rooted in time-tested wisdom.'
   },
   {
-    icon: Star,
-    title: 'Traditional Excellence',
-    description: 'We uphold the authentic principles of Siddha medicine passed down through generations.',
+    icon: ShieldCheck,
+    title: 'Ethical & Transparent',
+    description: 'No miracle cures, no false promises. We provide honest prognosis and transparent treatment plans based on realistic outcomes.'
   },
   {
-    icon: Users,
-    title: 'Holistic Approach',
-    description: 'Treatment addresses body, mind, and spirit to achieve complete wellness and lasting health.',
+    icon: HeartPulse,
+    title: 'Root Cause Therapy',
+    description: 'We don’t just manage symptoms. Our goal is to identify and treat the underlying imbalance in the Three Doshas (Vatha, Pitha, Kapha).'
   },
+  {
+    icon: Sparkles,
+    title: 'Hygiene & Standards',
+    description: 'A clean, modern clinical environment that respects patient dignity and ensures the highest standards of safety and hygiene.'
+  }
 ];
 
 const About = () => {
@@ -41,184 +38,133 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-flex items-center gap-2 mb-4">
               <span className="w-8 h-px bg-gold" />
               <span className="text-gold text-sm font-medium tracking-widest uppercase">
-                About Us
+                Our Legacy
               </span>
               <span className="w-8 h-px bg-gold" />
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-ivory mb-6">
-              Meet Dr. M. Vivekanandan
+              Maharishi Siddha Clinic &<br /> Sakthi Varma Clinic
             </h1>
-            <p className="text-ivory/80 text-lg">
-              A distinguished practitioner dedicated to preserving and sharing 
-              the ancient wisdom of Siddha medicine.
+            <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
+              A sanctuary of traditional healing where ancient science meets modern care.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Doctor Profile */}
+      {/* Clinic History & Purpose */}
       <section className="section-padding bg-background">
         <div className="container-luxury">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Image */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative sticky top-32"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-elevated">
-                <img
-                  src={doctorImage}
-                  alt="Dr. M. Vivekanandan - Siddha Medicine Expert"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">
+                Restoring Health, <br /><span className="text-accent">Naturally.</span>
+              </h2>
+              <div className="prose prose-lg text-muted-foreground space-y-6">
+                <p>
+                  Established with a vision to provide authentic Siddha healthcare, <strong>Maharishi Siddha Clinic</strong> stands as a beacon of hope for those seeking natural and lasting solutions to their health problems. Along with our sister concern, <strong>Sakthi Varma Clinic</strong>, we offer a comprehensive healing ecosystem.
+                </p>
+                <p>
+                  Our institution is built on the belief that true health is not merely the absence of disease, but a state of harmonious balance. We follow the holistic principles of the Siddha system, which views the human body as a microcosm of the universe.
+                </p>
+                <p>
+                  For decades, we have served the community by addressing chronic ailments, skin disorders, and musculoskeletal issues without the use of harsh chemicals or invasive procedures.
+                </p>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-3xl" />
             </motion.div>
 
-            {/* Content */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="relative"
             >
-              <div>
-                <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-                  Dr. M. Vivekanandan, <span className="text-accent">BSMS</span>
-                </h2>
-                <p className="text-accent font-medium tracking-wide uppercase text-sm">
-                  Director – IMPCOPS • Siddha Medicine Specialist
-                </p>
+              {/* Image Placeholder for Clinic Interior */}
+              <div className="aspect-[4/3] bg-muted rounded-2xl overflow-hidden shadow-elevated relative">
+                <div className="absolute inset-0 flex items-center justify-center bg-primary/5 text-primary/20">
+                  <Building2 className="w-24 h-24" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent text-white">
+                  <p className="font-medium">A serene healing environment</p>
+                </div>
               </div>
-
-              <div className="prose prose-lg max-w-none">
-                <p className="text-muted-foreground leading-relaxed">
-                  With over 25 years of dedicated practice in Siddha medicine, Dr. M. Vivekanandan 
-                  has established himself as one of the most respected practitioners in Tamil Nadu. 
-                  His journey began with a deep fascination for ancient healing traditions and a 
-                  genuine desire to help people overcome their health challenges naturally.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  As the Director of IMPCOPS (Indian Medical Practitioners' Co-operative Pharmacy 
-                  and Stores), Dr. Vivekanandan has been instrumental in promoting authentic Siddha 
-                  medicine while ensuring the highest standards of quality and efficacy in 
-                  traditional formulations.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  His expertise spans Varma therapy, skin disorders, joint ailments, and chronic 
-                  pain management. Dr. Vivekanandan believes in treating the root cause of 
-                  ailments rather than just suppressing symptoms, following the time-tested 
-                  principles established by the ancient Siddhars.
-                </p>
-              </div>
-
-              {/* Achievements Grid */}
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                {achievements.map((item, index) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="p-4 rounded-xl bg-secondary/50 border border-border/50"
-                  >
-                    <item.icon className="w-6 h-6 text-accent mb-2" />
-                    <p className="font-semibold text-foreground">{item.label}</p>
-                    <p className="text-xs text-muted-foreground">{item.description}</p>
-                  </motion.div>
-                ))}
-              </div>
+              {/* Deco */}
+              <div className="absolute -z-10 top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Core Values / Philosophy */}
       <section className="section-padding bg-secondary/30">
         <div className="container-luxury">
           <SectionHeading
             badge="Our Philosophy"
-            title="What We Stand For"
-            subtitle="Our clinic is built on the foundational principles that have guided Siddha medicine for millennia."
+            title="The Siddha Way of Life"
+            subtitle="We treat the person, not just the disease. Our approach is patient-centric, holistic, and deeply rooted in ethics."
           />
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {values.map((value, index) => (
               <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className="text-center p-8 bg-card rounded-2xl border border-border/50 shadow-card"
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-6 p-6 rounded-2xl bg-card border border-border/50 hover:shadow-card transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-accent" />
+                <div className="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <value.icon className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {value.description}
-                </p>
+                <div>
+                  <h3 className="font-serif text-xl font-semibold text-primary mb-2">{value.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Clinic Info */}
-      <section className="section-padding bg-background">
-        <div className="container-luxury">
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading
-              badge="Our Clinics"
-              title="Maharishi Siddha & Sakthi Varma Clinic"
-              subtitle="Two specialized clinics offering comprehensive traditional healing under one trusted name."
-            />
-
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-8 bg-primary text-primary-foreground rounded-2xl"
-              >
-                <h3 className="font-serif text-2xl font-semibold mb-4">Maharishi Siddha Clinic</h3>
-                <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                  Specializing in traditional Siddha medicine for skin disorders, chronic diseases, 
-                  and holistic wellness treatments.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="p-8 bg-accent text-accent-foreground rounded-2xl"
-              >
-                <h3 className="font-serif text-2xl font-semibold mb-4">Sakthi Varma Clinic</h3>
-                <p className="text-accent-foreground/80 text-sm leading-relaxed">
-                  Dedicated to Varma therapy for pain management, sports injuries, 
-                  and neurological conditions.
-                </p>
-              </motion.div>
+      {/* Statistics or Trust Badges can go here */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container-luxury text-center">
+          <h2 className="font-serif text-3xl font-semibold mb-8">Committed to Excellence</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <p className="text-4xl font-bold text-gold mb-2">100%</p>
+              <p className="opacity-80">Natural Therapies</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-gold mb-2">ISO</p>
+              <p className="opacity-80">Standard Care</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-gold mb-2">Ethics</p>
+              <p className="opacity-80">First Approach</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-gold mb-2">Safe</p>
+              <p className="opacity-80">Formulations</p>
             </div>
           </div>
         </div>
       </section>
+
     </Layout>
   );
 };

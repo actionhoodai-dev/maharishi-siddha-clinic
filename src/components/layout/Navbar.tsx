@@ -5,8 +5,10 @@ import { Menu, X, Phone } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
+  { name: 'About Clinic', path: '/about' },
+  { name: 'Our Doctor', path: '/doctor' },
   { name: 'Treatments', path: '/treatments' },
+  { name: 'Conditions', path: '/conditions' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -32,17 +34,16 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-xl shadow-soft border-b border-border/50'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'bg-background/95 backdrop-blur-xl shadow-soft border-b border-border/50'
+        : 'bg-transparent'
+        }`}
     >
       <nav className="container-luxury">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="flex flex-col">
-            <motion.span 
+            <motion.span
               className="font-serif text-lg md:text-xl font-semibold text-primary tracking-wide"
               whileHover={{ scale: 1.02 }}
             >
@@ -59,11 +60,10 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative font-medium text-sm tracking-wide transition-colors duration-300 ${
-                  location.pathname === link.path
-                    ? 'text-accent'
-                    : 'text-foreground/80 hover:text-accent'
-                }`}
+                className={`relative font-medium text-sm tracking-wide transition-colors duration-300 ${location.pathname === link.path
+                  ? 'text-accent'
+                  : 'text-foreground/80 hover:text-accent'
+                  }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
@@ -87,7 +87,7 @@ const Navbar = () => {
               <span>94430 84418</span>
             </a>
             <Link
-              to="/contact"
+              to="/appointment"
               className="btn-premium text-sm px-6 py-2.5 bg-primary text-primary-foreground"
             >
               Book Appointment
@@ -125,11 +125,10 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`block py-3 text-lg font-medium ${
-                      location.pathname === link.path
-                        ? 'text-accent'
-                        : 'text-foreground/80'
-                    }`}
+                    className={`block py-3 text-lg font-medium ${location.pathname === link.path
+                      ? 'text-accent'
+                      : 'text-foreground/80'
+                      }`}
                   >
                     {link.name}
                   </Link>

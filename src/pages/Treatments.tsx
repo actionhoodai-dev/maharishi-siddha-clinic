@@ -125,7 +125,7 @@ const Treatments = () => {
               Healing Through Nature
             </h1>
             <p className="text-ivory/80 text-lg">
-              Discover our comprehensive range of traditional treatments, 
+              Discover our comprehensive range of traditional treatments,
               each designed to restore balance and promote natural healing.
             </p>
           </motion.div>
@@ -147,11 +147,10 @@ const Treatments = () => {
                 className="group text-left p-8 bg-card rounded-2xl border border-border/50 shadow-card transition-all duration-500 hover:shadow-elevated hover:-translate-y-2 hover:border-accent/30"
               >
                 <div
-                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 ${
-                    treatment.color === 'gold'
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 ${treatment.color === 'gold'
                       ? 'bg-accent/10 text-accent'
                       : 'bg-primary/10 text-primary'
-                  }`}
+                    }`}
                 >
                   <treatment.icon className="w-8 h-8" />
                 </div>
@@ -237,11 +236,11 @@ const Treatments = () => {
               Ready to Begin Your Healing Journey?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Book a consultation with Dr. Vivekanandan and discover the right 
+              Book a consultation with Dr. Vivekanandan and discover the right
               treatment plan for your health needs.
             </p>
             <Link
-              to="/contact"
+              to="/appointment"
               className="btn-premium inline-flex items-center gap-2 bg-primary text-primary-foreground"
             >
               Book Consultation
@@ -277,11 +276,10 @@ const Treatments = () => {
 
               <div className="p-8 md:p-10">
                 <div
-                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 ${
-                    selectedTreatment.color === 'gold'
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 ${selectedTreatment.color === 'gold'
                       ? 'bg-accent/10 text-accent'
                       : 'bg-primary/10 text-primary'
-                  }`}
+                    }`}
                 >
                   <selectedTreatment.icon className="w-8 h-8" />
                 </div>
@@ -326,7 +324,7 @@ const Treatments = () => {
                 </div>
 
                 <Link
-                  to="/contact"
+                  to="/appointment"
                   className="btn-premium w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground"
                   onClick={() => setSelectedTreatment(null)}
                 >

@@ -78,9 +78,9 @@ const DoctorPreview = () => {
             />
 
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Dr. M. Vivekanandan is a distinguished Siddha medicine practitioner with over 
-              25 years of experience in traditional healing. As the Director of IMPCOPS 
-              (Indian Medical Practitioners' Co-operative Pharmacy and Stores), he combines 
+              Dr. M. Vivekanandan is a distinguished Siddha medicine practitioner with over
+              25 years of experience in traditional healing. As the Director of IMPCOPS
+              (Indian Medical Practitioners' Co-operative Pharmacy and Stores), he combines
               ancient wisdom with modern understanding to provide effective natural treatments.
             </p>
 
@@ -107,7 +107,7 @@ const DoctorPreview = () => {
             </div>
 
             <Link
-              to="/about"
+              to="/doctor"
               className="btn-premium inline-flex items-center gap-2 text-sm"
             >
               <span>Read Full Bio</span>
