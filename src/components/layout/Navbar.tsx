@@ -34,8 +34,8 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'bg-background/95 backdrop-blur-xl shadow-soft border-b border-border/50'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen
+        ? 'bg-background shadow-soft border-b border-border'
         : 'bg-transparent'
         }`}
     >
@@ -113,7 +113,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/98 backdrop-blur-xl border-b border-border"
+            className="md:hidden bg-background border-b border-border"
           >
             <div className="container-luxury py-6 space-y-4">
               {navLinks.map((link, index) => (
